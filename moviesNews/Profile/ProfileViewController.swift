@@ -177,6 +177,7 @@ class ProfileViewController: BaseViewController {
                 }
             case .failure:
                 self?.tabBarController?.present(self!.alertT, animated: true)
+                self?.hideLoader()
                 break
             }
         }
@@ -192,6 +193,7 @@ class ProfileViewController: BaseViewController {
                 }
             case .failure:
                 self?.tabBarController?.present(self!.alertT, animated: true)
+                self?.hideLoader()
                 break
             }
         }
@@ -207,9 +209,7 @@ class ProfileViewController: BaseViewController {
                 self?.tabBarController?.present(self!.alertT, animated: true)
                 break
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                self?.hideLoader()
-            }
+            self?.hideLoader()
         }
     }
     

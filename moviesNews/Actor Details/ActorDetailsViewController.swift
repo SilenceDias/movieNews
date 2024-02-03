@@ -295,12 +295,8 @@ class ActorDetailsViewController: BaseViewController {
             }
             group.leave()
         }
-        group.enter()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+        group.notify(queue: .main) { [weak self] in
             self?.hideLoader()
-            group.leave()
-        }
-        group.notify(queue: .main) {
             print("All requests completed")
         }
     }
