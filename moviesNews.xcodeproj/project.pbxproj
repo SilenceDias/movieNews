@@ -14,7 +14,7 @@
 		E8305A2B2B503F41003A11F2 /* newYear.json in Resources */ = {isa = PBXBuildFile; fileRef = E8305A2A2B503F41003A11F2 /* newYear.json */; };
 		E8305A522B56EFE2003A11F2 /* moviesNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8305A502B56EFE2003A11F2 /* moviesNews.xcdatamodeld */; };
 		E8305A552B56F0CA003A11F2 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8305A542B56F0CA003A11F2 /* MainTabBarViewController.swift */; };
-		E8305A5B2B56F653003A11F2 /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8305A5A2B56F653003A11F2 /* ForYouViewController.swift */; };
+		E8305A5B2B56F653003A11F2 /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8305A5A2B56F653003A11F2 /* WatchListViewController.swift */; };
 		E8305A5D2B56F65F003A11F2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8305A5C2B56F65F003A11F2 /* FavoritesViewController.swift */; };
 		E8305A5F2B56F66A003A11F2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8305A5E2B56F66A003A11F2 /* SearchViewController.swift */; };
 		E8305A612B56F673003A11F2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8305A602B56F673003A11F2 /* ProfileViewController.swift */; };
@@ -60,7 +60,7 @@
 		E8305A2A2B503F41003A11F2 /* newYear.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newYear.json; sourceTree = "<group>"; };
 		E8305A512B56EFE2003A11F2 /* moviesNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = moviesNews.xcdatamodel; sourceTree = "<group>"; };
 		E8305A542B56F0CA003A11F2 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		E8305A5A2B56F653003A11F2 /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
+		E8305A5A2B56F653003A11F2 /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
 		E8305A5C2B56F65F003A11F2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		E8305A5E2B56F66A003A11F2 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E8305A602B56F673003A11F2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -161,12 +161,12 @@
 			path = MainTabBar;
 			sourceTree = "<group>";
 		};
-		E8305A562B56F599003A11F2 /* ForYou */ = {
+		E8305A562B56F599003A11F2 /* WatchList */ = {
 			isa = PBXGroup;
 			children = (
-				E8305A5A2B56F653003A11F2 /* ForYouViewController.swift */,
+				E8305A5A2B56F653003A11F2 /* WatchListViewController.swift */,
 			);
-			path = ForYou;
+			path = WatchList;
 			sourceTree = "<group>";
 		};
 		E8305A572B56F62A003A11F2 /* Favorites */ = {
@@ -299,7 +299,7 @@
 				E8305A592B56F641003A11F2 /* Profile */,
 				E8305A582B56F639003A11F2 /* Search */,
 				E8305A572B56F62A003A11F2 /* Favorites */,
-				E8305A562B56F599003A11F2 /* ForYou */,
+				E8305A562B56F599003A11F2 /* WatchList */,
 				E8305A272B503473003A11F2 /* ActivityIndicators */,
 				E8305A222B5033B5003A11F2 /* Common */,
 				E836D3C32B38EC4300FBAD40 /* Gallery */,
@@ -479,7 +479,7 @@
 				E8305A612B56F673003A11F2 /* ProfileViewController.swift in Sources */,
 				E8305A552B56F0CA003A11F2 /* MainTabBarViewController.swift in Sources */,
 				E836D3C02B38DA7700FBAD40 /* MoviesOfActor.swift in Sources */,
-				E8305A5B2B56F653003A11F2 /* ForYouViewController.swift in Sources */,
+				E8305A5B2B56F653003A11F2 /* WatchListViewController.swift in Sources */,
 				E836D3BC2B38C28600FBAD40 /* Photos.swift in Sources */,
 				E8305A5F2B56F66A003A11F2 /* SearchViewController.swift in Sources */,
 				E8305A292B503499003A11F2 /* LoadingView.swift in Sources */,

@@ -50,10 +50,6 @@ class MovieTableViewCell: UITableViewCell {
         let view = UIImageView()
         view.image = UIImage(named: "empty_star")?.withRenderingMode(.alwaysTemplate)
         view.contentMode = .scaleAspectFit
-//        view.layer.masksToBounds = true
-//        view.layer.cornerRadius = 18
-//        view.backgroundColor = .systemGray
-//        view.tintColor = .systemRed
         return view
     }()
     
@@ -74,6 +70,15 @@ class MovieTableViewCell: UITableViewCell {
         labelMovie.text = title
         dateLabel.text = date
         ratingLabel.text = "★ \(rating)"
+        if rating < 7 && rating >= 5 {
+            ratingLabel.backgroundColor = .systemOrange
+        }
+        else if rating < 5 {
+            ratingLabel.backgroundColor = .systemRed
+        }
+        else {
+            ratingLabel.backgroundColor = .systemGreen
+        }
         let urlString = "https://image.tmdb.org/t/p/w200" + (image)
         let url = URL(string: urlString)!
         imageMovie.kf.setImage(with: url)

@@ -131,8 +131,9 @@ class ProfileViewController: BaseViewController {
             make.height.equalTo(50)
             make.width.equalTo(120)
         }
-        view.addSubview(logoutButton)
-        view.addSubview(profilePicture)
+        [logoutButton, profilePicture].forEach {
+            view.addSubview($0)
+        }
         profilePicture.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.height.equalTo(400)
