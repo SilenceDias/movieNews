@@ -17,6 +17,15 @@ class ProfileViewController: BaseViewController {
     }
     
     // MARK: UI Components
+    private var titleLabel: UILabel = {
+        let view = UILabel()
+        view.font = UIFont.systemFont(ofSize: 36, weight: .bold)
+        view.textAlignment = .center
+        view.textColor = .black
+        view.text = "Profile"
+        return view
+    }()
+    
     private lazy var loginField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Enter Login"
@@ -55,13 +64,6 @@ class ProfileViewController: BaseViewController {
         return label
     }()
     
-    private let loggedLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        label.text = "Logged In!"
-        return label
-    }()
-    
     private let logoutButton: UIButton = {
         let button = UIButton()
         button.setTitle("Logout", for: .normal)
@@ -74,8 +76,8 @@ class ProfileViewController: BaseViewController {
         let view = UIImageView()
         view.layer.masksToBounds = true
         view.image = UIImage(named: "noProfile")
-        view.layer.cornerRadius = 100
-        view.contentMode = .scaleAspectFill
+        view.layer.cornerRadius = 20
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
@@ -100,10 +102,13 @@ class ProfileViewController: BaseViewController {
         loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         eyeButton.addTarget(self, action: #selector(didTapEye), for: .touchUpInside)
     
-        [enterLabel, loginField, passwordField, loginButton].forEach {
+        [titleLabel, enterLabel, loginField, passwordField, loginButton].forEach {
             view.addSubview($0)
         }
-        
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.centerX.equalToSuperview()
+        }
         enterLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).inset(185)
             make.left.equalToSuperview().inset(16)
@@ -126,25 +131,20 @@ class ProfileViewController: BaseViewController {
             make.height.equalTo(50)
             make.width.equalTo(120)
         }
-        view.addSubview(loggedLabel)
         view.addSubview(logoutButton)
         view.addSubview(profilePicture)
         profilePicture.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.height.width.equalTo(200)
-        }
-        loggedLabel.snp.makeConstraints { make in
-            make.top.equalTo(profilePicture.snp.bottom).offset(16)
-            make.centerX.equalToSuperview()
+            make.height.equalTo(400)
+            make.width.equalTo(300)
         }
         logoutButton.snp.makeConstraints { make in
-            make.top.equalTo(loggedLabel.snp.bottom).offset(16)
+            make.top.equalTo(profilePicture.snp.bottom).offset(16)
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
             make.width.equalTo(120)
         }
         profilePicture.isHidden = true
-        loggedLabel.isHidden = true
         logoutButton.isHidden = true
         logoutButton.isEnabled = false
         logoutButton.addTarget(self, action: #selector(didTapLogout), for: .touchUpInside)
@@ -223,7 +223,6 @@ class ProfileViewController: BaseViewController {
         var isLogged = UserDefaults.standard.bool(forKey: "isLoggedIn")
         if !isLogged{
             profilePicture.isHidden = true
-            loggedLabel.isHidden = true
             logoutButton.isHidden = true
             logoutButton.isEnabled = false
             enterLabel.isHidden = false
@@ -237,7 +236,6 @@ class ProfileViewController: BaseViewController {
             passwordField.isHidden = true
             loginButton.isHidden = true
             profilePicture.isHidden = false
-            loggedLabel.isHidden = false
             logoutButton.isHidden = false
             logoutButton.isEnabled = true
         }

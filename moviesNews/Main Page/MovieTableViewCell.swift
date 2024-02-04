@@ -48,12 +48,12 @@ class MovieTableViewCell: UITableViewCell {
     
     var imageFavorite: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "icon_favorites")?.withRenderingMode(.alwaysTemplate)
+        view.image = UIImage(named: "empty_star")?.withRenderingMode(.alwaysTemplate)
         view.contentMode = .scaleAspectFit
-        view.layer.masksToBounds = true
-        view.layer.cornerRadius = 18
-        view.backgroundColor = .systemGray
-        view.tintColor = .systemRed
+//        view.layer.masksToBounds = true
+//        view.layer.cornerRadius = 18
+//        view.backgroundColor = .systemGray
+//        view.tintColor = .systemRed
         return view
     }()
     
@@ -127,12 +127,10 @@ class MovieTableViewCell: UITableViewCell {
     
     func toggleFavoriteHeart(with isFavorite: Bool) {
         if isFavorite{
-            imageFavorite.backgroundColor = .systemRed
-            imageFavorite.tintColor = .systemGray
+            imageFavorite.image = UIImage(named: "full_star")
         }
         else {
-            imageFavorite.backgroundColor = .systemGray
-            imageFavorite.tintColor = .systemRed
+            imageFavorite.image = UIImage(named: "empty_star")
         }
         
     }
