@@ -305,7 +305,9 @@ class MovieDetailsViewController: BaseViewController {
     }
     
     private func loadData(){
+        let group = DispatchGroup()
         showLoader()
+        group.enter()
         networkManager.loadMovieDetails(id: movidId) { [weak self] movieDetails in
             guard let posterPath = movieDetails.posterPath else{return}
             self?.voteAvg = Int(round(movieDetails.voteAverage ?? 0))
@@ -321,14 +323,18 @@ class MovieDetailsViewController: BaseViewController {
             let url = URL(string: urlString)!
             self!.imageView.kf.setImage(with: url)
             guard let movidId = self?.movidId else { return }
-            self?.networkManager.loadCastOfMovie(movieId: movidId) { [weak self] cast in
-                cast.forEach { cast in
-                    self?.cast.append(cast)
-                }
+            group.leave()
+        }
+        group.enter()
+        networkManager.loadCastOfMovie(movieId: movidId) { [weak self] cast in
+            cast.forEach { cast in
+                self?.cast.append(cast)
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                self?.hideLoader()
-            }
+            group.leave()
+        }
+        group.notify(queue: .main) { [weak self] in
+            self?.hideLoader()
+            print("All requests completed")
         }
     }
     

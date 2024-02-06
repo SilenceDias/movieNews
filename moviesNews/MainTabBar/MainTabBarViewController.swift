@@ -11,19 +11,19 @@ import SwiftKeychainWrapper
 class MainTabBarViewController: UITabBarController {
     
     // MARK: Properties
-    private let titles: [String] = ["Home", "For You", "Favorites", "Find", "Profile"]
+    private let titles: [String] = ["Home", "Favorites", "Watch List", "Find", "Profile"]
     private let icons: [UIImage?] = [
         UIImage(named: "icon_home"),
         UIImage(named: "icon_for_you"),
-        UIImage(named: "icon_favorites"),
+        UIImage(named: "icon_watch_list"),
         UIImage(named: "icon_search"),
         UIImage(named: "icon_profile")
     ]
     
     private var allViewControllers = [
         UINavigationController(rootViewController: MainViewController()),
-        ForYouViewController(),
         UINavigationController(rootViewController: FavoritesViewController()),
+        WatchListiewController(),
         SearchViewController(),
         ProfileViewController()
     ]

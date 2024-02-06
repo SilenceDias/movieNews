@@ -256,6 +256,8 @@ class ActorDetailsViewController: BaseViewController {
     
     private func loadData(){
         showLoader()
+        let group = DispatchGroup()
+        group.enter()
         networkManager.loadCastDetails(id: actorId) { [weak self] actorDetails in
             guard let posterPath = actorDetails.profilePath else{return}
             let urlString = "https://image.tmdb.org/t/p/w200" + (posterPath)
@@ -267,10 +269,9 @@ class ActorDetailsViewController: BaseViewController {
             self?.placeOfBornLabel.text = actorDetails.placeOfBirth
             self?.deathLabel.text = "Death: \(actorDetails.deathday ?? "Alive")"
             self?.biographyView.configureView(with: "Biography", and: actorDetails.biography ?? "No bio yet")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                self?.hideLoader()
-            }
+            group.leave()
         }
+        group.enter()
         networkManager.loadPhotosOfActor(id: actorId) {[weak self] photos in
             if photos.count > 4 {
                 for i in 0...3 {
@@ -285,11 +286,18 @@ class ActorDetailsViewController: BaseViewController {
                 self?.lastPhotoIndex = photos.count - 1
             }
             self?.allPhotosCount = photos.count
+            group.leave()
         }
+        group.enter()
         networkManager.loadMoviesOfActor(id: actorId) { [weak self] movies in
             movies.forEach { movie in
                 self?.movies.append(movie)
             }
+            group.leave()
+        }
+        group.notify(queue: .main) { [weak self] in
+            self?.hideLoader()
+            print("All requests completed")
         }
     }
     

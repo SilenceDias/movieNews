@@ -17,6 +17,15 @@ class ProfileViewController: BaseViewController {
     }
     
     // MARK: UI Components
+    private var titleLabel: UILabel = {
+        let view = UILabel()
+        view.font = UIFont.systemFont(ofSize: 36, weight: .bold)
+        view.textAlignment = .center
+        view.textColor = .black
+        view.text = "Profile"
+        return view
+    }()
+    
     private lazy var loginField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Enter Login"
@@ -55,13 +64,6 @@ class ProfileViewController: BaseViewController {
         return label
     }()
     
-    private let loggedLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        label.text = "Logged In!"
-        return label
-    }()
-    
     private let logoutButton: UIButton = {
         let button = UIButton()
         button.setTitle("Logout", for: .normal)
@@ -74,8 +76,8 @@ class ProfileViewController: BaseViewController {
         let view = UIImageView()
         view.layer.masksToBounds = true
         view.image = UIImage(named: "noProfile")
-        view.layer.cornerRadius = 100
-        view.contentMode = .scaleAspectFill
+        view.layer.cornerRadius = 20
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
@@ -97,41 +99,56 @@ class ProfileViewController: BaseViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         profilePicture.isUserInteractionEnabled = true
         profilePicture.addGestureRecognizer(tap)
-        if !isLogged{
-            loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
-            eyeButton.addTarget(self, action: #selector(didTapEye), for: .touchUpInside)
-            
-            [enterLabel, loginField, passwordField, loginButton].forEach {
-                view.addSubview($0)
-            }
-            
-            enterLabel.snp.makeConstraints { make in
-                make.top.equalTo(view.safeAreaLayoutGuide).inset(185)
-                make.left.equalToSuperview().inset(16)
-            }
-            loginField.snp.makeConstraints { make in
-                make.top.equalTo(enterLabel.snp.bottom).offset(16)
-                make.left.right.equalToSuperview().inset(16)
-            }
-            passwordField.rightView = eyeButton
-            passwordField.rightViewMode = .always
-            
-            passwordField.snp.makeConstraints { make in
-                make.top.equalTo(loginField.snp.bottom).offset(16)
-                make.left.right.equalTo(loginField)
-            }
-            
-            loginButton.snp.makeConstraints { make in
-                make.top.equalTo(passwordField.snp.bottom).offset(200)
-                make.centerX.equalToSuperview()
-                make.height.equalTo(50)
-                make.width.equalTo(120)
-                
-            }
+        loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
+        eyeButton.addTarget(self, action: #selector(didTapEye), for: .touchUpInside)
+    
+        [titleLabel, enterLabel, loginField, passwordField, loginButton].forEach {
+            view.addSubview($0)
         }
-        else {
-            loggedInViews()
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.centerX.equalToSuperview()
         }
+        enterLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(185)
+            make.left.equalToSuperview().inset(16)
+        }
+        loginField.snp.makeConstraints { make in
+            make.top.equalTo(enterLabel.snp.bottom).offset(16)
+            make.left.right.equalToSuperview().inset(16)
+        }
+        passwordField.rightView = eyeButton
+        passwordField.rightViewMode = .always
+        
+        passwordField.snp.makeConstraints { make in
+            make.top.equalTo(loginField.snp.bottom).offset(16)
+            make.left.right.equalTo(loginField)
+        }
+            
+        loginButton.snp.makeConstraints { make in
+            make.top.equalTo(passwordField.snp.bottom).offset(200)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(50)
+            make.width.equalTo(120)
+        }
+        [logoutButton, profilePicture].forEach {
+            view.addSubview($0)
+        }
+        profilePicture.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.height.equalTo(400)
+            make.width.equalTo(300)
+        }
+        logoutButton.snp.makeConstraints { make in
+            make.top.equalTo(profilePicture.snp.bottom).offset(16)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(50)
+            make.width.equalTo(120)
+        }
+        profilePicture.isHidden = true
+        logoutButton.isHidden = true
+        logoutButton.isEnabled = false
+        logoutButton.addTarget(self, action: #selector(didTapLogout), for: .touchUpInside)
     }
     
     @objc private func imageTapped() {
@@ -161,6 +178,7 @@ class ProfileViewController: BaseViewController {
                 }
             case .failure:
                 self?.tabBarController?.present(self!.alertT, animated: true)
+                self?.hideLoader()
                 break
             }
         }
@@ -176,6 +194,7 @@ class ProfileViewController: BaseViewController {
                 }
             case .failure:
                 self?.tabBarController?.present(self!.alertT, animated: true)
+                self?.hideLoader()
                 break
             }
         }
@@ -186,14 +205,12 @@ class ProfileViewController: BaseViewController {
             switch result {
             case .success(let sessionId):
                 print("My sessionId is \(sessionId)")
-                self?.loggedInViews()
+                self?.changeViews()
             case .failure:
                 self?.tabBarController?.present(self!.alertT, animated: true)
                 break
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                self?.hideLoader()
-            }
+            self?.hideLoader()
         }
     }
     
@@ -203,37 +220,31 @@ class ProfileViewController: BaseViewController {
         eyeButton.setImage(image, for: .normal)
     }
     
-    private func loggedInViews(){
-        view.subviews.forEach({
-            if $0.isKind(of: LoadingView.self){}
-            else {
-                $0.removeFromSuperview()
-            }
-        })
-        view.addSubview(loggedLabel)
-        view.addSubview(logoutButton)
-        view.addSubview(profilePicture)
-        profilePicture.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.height.width.equalTo(200)
+    private func changeViews(){
+        var isLogged = UserDefaults.standard.bool(forKey: "isLoggedIn")
+        if !isLogged{
+            profilePicture.isHidden = true
+            logoutButton.isHidden = true
+            logoutButton.isEnabled = false
+            enterLabel.isHidden = false
+            loginField.isHidden = false
+            passwordField.isHidden = false
+            loginButton.isHidden = false
         }
-        loggedLabel.snp.makeConstraints { make in
-            make.top.equalTo(profilePicture.snp.bottom).offset(16)
-            make.centerX.equalToSuperview()
+        else {
+            enterLabel.isHidden = true
+            loginField.isHidden = true
+            passwordField.isHidden = true
+            loginButton.isHidden = true
+            profilePicture.isHidden = false
+            logoutButton.isHidden = false
+            logoutButton.isEnabled = true
         }
-        logoutButton.snp.makeConstraints { make in
-            make.top.equalTo(loggedLabel.snp.bottom).offset(16)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(50)
-            make.width.equalTo(120)
-        }
-        logoutButton.addTarget(self, action: #selector(didTapLogout), for: .touchUpInside)
     }
     
     @objc private func didTapLogout() {
         UserDefaults.standard.set(false, forKey: "isLoggedIn")
-        view.subviews.forEach({ $0.removeFromSuperview() })
-        setupViews()
+        changeViews()
     }
 }
 

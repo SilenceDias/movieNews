@@ -25,7 +25,7 @@ class FavoritesViewController: UIViewController {
         view.font = UIFont.systemFont(ofSize: 36, weight: .bold)
         view.textAlignment = .center
         view.textColor = .black
-        view.text = "MoviesNews"
+        view.text = "Favorites"
         return view
     }()
     

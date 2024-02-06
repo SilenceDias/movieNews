@@ -33,14 +33,17 @@ class NetworkManager {
     
     func loadMovieLists(filter: String, completion: @escaping([Result]) -> Void){
         var components = urlComponents
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: apiKey)
+        ]
         components.path = "/3/movie/\(filter)"
         guard let requestUrl = components.url else {
             return
         }
-        AF.request(requestUrl).responseJSON { response in
+        AF.request(requestUrl, headers: headers).responseData { response in
             guard let data = response.data else {
                 print("Error: did not get Data")
-                print(components.url)
+                print(components.url!)
                 return
             }
             do{
@@ -58,11 +61,14 @@ class NetworkManager {
     
     func loadCastOfMovie(movieId:Int, completion: @escaping([CastElement]) -> Void){
         var components = urlComponents
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: apiKey)
+        ]
         components.path = "/3/movie/\(movieId)/casts"
         guard let requestUrl = components.url else {
             return
         }
-        AF.request(requestUrl).responseJSON { response in
+        AF.request(requestUrl, headers: headers).responseData { response in
             guard let data = response.data else {
                 print("Error: did not get Data")
                 return
@@ -82,11 +88,14 @@ class NetworkManager {
     
     func loadGenres(completion: @escaping([Genre]) -> Void){
         var components = urlComponents
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: apiKey)
+        ]
         components.path = "/3/genre/movie/list"
         guard let requestUrl = components.url else {
             return
         }
-        AF.request(requestUrl).responseJSON { response in
+        AF.request(requestUrl, headers: headers).responseData { response in
             guard let data = response.data else {
                 print("Error: did not get Data")
                 return
@@ -107,10 +116,13 @@ class NetworkManager {
     func loadMovieDetails(id: Int, completion: @escaping(MovieDetails) -> Void){
         var components = urlComponents
         components.path = "/3/movie/\(id)"
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: apiKey)
+        ]
         guard let requestUrl = components.url else {
             return
         }
-        AF.request(requestUrl).responseJSON { response in
+        AF.request(requestUrl, headers: headers).responseData { response in
             guard let data = response.data else {
                 print("Error: did not get Data")
                 return
@@ -130,11 +142,14 @@ class NetworkManager {
     
     func loadMovieDetailsVideos(id: Int, completion: @escaping([Video]) -> Void){
         var components = urlComponents
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: apiKey)
+        ]
         components.path = "/3/movie/\(id)/videos"
         guard let requestUrl = components.url else {
             return
         }
-        AF.request(requestUrl).responseJSON { response in
+        AF.request(requestUrl, headers: headers).responseData { response in
             guard let data = response.data else {
                 print("Error: did not get Data")
                 return
@@ -154,11 +169,14 @@ class NetworkManager {
     
     func loadMovieDetailsExternalIds(id: Int, completion: @escaping(ExterndalIds) -> Void){
         var components = urlComponents
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: apiKey)
+        ]
         components.path = "/3/movie/\(id)/external_ids"
         guard let requestUrl = components.url else {
             return
         }
-        AF.request(requestUrl).responseJSON { response in
+        AF.request(requestUrl, headers: headers).responseData { response in
             guard let data = response.data else {
                 print("Error: did not get Data")
                 return
@@ -178,11 +196,14 @@ class NetworkManager {
     
     func loadCastDetails(id: Int, completion: @escaping(Actor) -> Void){
         var components = urlComponents
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: apiKey)
+        ]
         components.path = "/3/person/\(id)"
         guard let requestUrl = components.url else {
             return
         }
-        AF.request(requestUrl).responseJSON { response in
+        AF.request(requestUrl, headers: headers).responseData { response in
             guard let data = response.data else {
                 print("Error: did not get Data")
                 return
@@ -202,11 +223,14 @@ class NetworkManager {
     
     func loadPhotosOfActor(id: Int, completion: @escaping([Profile]) -> Void){
         var components = urlComponents
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: apiKey)
+        ]
         components.path = "/3/person/\(id)/images"
         guard let requestUrl = components.url else {
             return
         }
-        AF.request(requestUrl).responseJSON { response in
+        AF.request(requestUrl, headers: headers).responseData { response in
             guard let data = response.data else {
                 print("Error: did not get Data")
                 return
@@ -226,11 +250,14 @@ class NetworkManager {
     
     func loadMoviesOfActor(id: Int, completion: @escaping([Movies]) -> Void){
         var components = urlComponents
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: apiKey)
+        ]
         components.path = "/3/person/\(id)/movie_credits"
         guard let requestUrl = components.url else {
             return
         }
-        AF.request(requestUrl).responseJSON { response in
+        AF.request(requestUrl, headers: headers).responseData { response in
             guard let data = response.data else {
                 print("Error: did not get Data")
                 return
@@ -250,11 +277,14 @@ class NetworkManager {
     
     func loadActorsExternalIds(id: Int, completion: @escaping(ActorsExternalIds) -> Void){
         var components = urlComponents
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: apiKey)
+        ]
         components.path = "/3/person/\(id)/external_ids"
         guard let requestUrl = components.url else {
             return
         }
-        AF.request(requestUrl).responseJSON { response in
+        AF.request(requestUrl, headers: headers).responseData { response in
             guard let data = response.data else {
                 print("Error: did not get Data")
                 return
@@ -363,6 +393,9 @@ class NetworkManager {
                     {
                         KeychainWrapper.standard.set(sessionId, forKey: "SessionId")
                         self.apiKey = KeychainWrapper.standard.string(forKey: "SessionId")
+                        self.urlComponents.queryItems = [
+                            URLQueryItem(name: "api_key", value: self.apiKey)
+                        ]
                         self.isLoggedIn = true
                         UserDefaults.standard.set(self.isLoggedIn, forKey: "isLoggedIn")
                         completion(.success(sessionId))
