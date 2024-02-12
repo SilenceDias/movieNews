@@ -410,4 +410,32 @@ class NetworkManager {
             }
         }
     }
+    func loadMoviesSearch(query: String, completion: @escaping([Result]) -> Void){
+        var components = urlComponents
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: apiKey),
+            URLQueryItem(name: "query", value: query)
+        ]
+        components.path = "/3/search/movie"
+        guard let requestUrl = components.url else {
+            return
+        }
+        AF.request(requestUrl, headers: headers).responseData { response in
+            guard let data = response.data else {
+                print("Error: did not get Data")
+                print(components.url!)
+                return
+            }
+            do{
+                let movie = try JSONDecoder().decode(Movie.self, from: data)
+                DispatchQueue.main.async {
+                    completion(movie.results)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([])
+                }
+            }
+        }
+    }
 }

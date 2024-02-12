@@ -94,7 +94,6 @@ class ProfileViewController: BaseViewController {
     
     // MARK: Methods
     private func setupViews() {
-        var isLogged = UserDefaults.standard.bool(forKey: "isLoggedIn")
         view.backgroundColor = .white
         let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         profilePicture.isUserInteractionEnabled = true
@@ -119,12 +118,10 @@ class ProfileViewController: BaseViewController {
         }
         passwordField.rightView = eyeButton
         passwordField.rightViewMode = .always
-        
         passwordField.snp.makeConstraints { make in
             make.top.equalTo(loginField.snp.bottom).offset(16)
             make.left.right.equalTo(loginField)
         }
-            
         loginButton.snp.makeConstraints { make in
             make.top.equalTo(passwordField.snp.bottom).offset(200)
             make.centerX.equalToSuperview()
@@ -145,10 +142,26 @@ class ProfileViewController: BaseViewController {
             make.height.equalTo(50)
             make.width.equalTo(120)
         }
-        profilePicture.isHidden = true
-        logoutButton.isHidden = true
-        logoutButton.isEnabled = false
         logoutButton.addTarget(self, action: #selector(didTapLogout), for: .touchUpInside)
+        var isLogged = UserDefaults.standard.bool(forKey: "isLoggedIn")
+        if !isLogged{
+            profilePicture.isHidden = true
+            logoutButton.isHidden = true
+            logoutButton.isEnabled = false
+            enterLabel.isHidden = false
+            loginField.isHidden = false
+            passwordField.isHidden = false
+            loginButton.isHidden = false
+        }
+        else {
+            enterLabel.isHidden = true
+            loginField.isHidden = true
+            passwordField.isHidden = true
+            loginButton.isHidden = true
+            profilePicture.isHidden = false
+            logoutButton.isHidden = false
+            logoutButton.isEnabled = true
+        }
     }
     
     @objc private func imageTapped() {
@@ -205,7 +218,8 @@ class ProfileViewController: BaseViewController {
             switch result {
             case .success(let sessionId):
                 print("My sessionId is \(sessionId)")
-                self?.changeViews()
+                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                self?.setupViews()
             case .failure:
                 self?.tabBarController?.present(self!.alertT, animated: true)
                 break
@@ -220,31 +234,9 @@ class ProfileViewController: BaseViewController {
         eyeButton.setImage(image, for: .normal)
     }
     
-    private func changeViews(){
-        var isLogged = UserDefaults.standard.bool(forKey: "isLoggedIn")
-        if !isLogged{
-            profilePicture.isHidden = true
-            logoutButton.isHidden = true
-            logoutButton.isEnabled = false
-            enterLabel.isHidden = false
-            loginField.isHidden = false
-            passwordField.isHidden = false
-            loginButton.isHidden = false
-        }
-        else {
-            enterLabel.isHidden = true
-            loginField.isHidden = true
-            passwordField.isHidden = true
-            loginButton.isHidden = true
-            profilePicture.isHidden = false
-            logoutButton.isHidden = false
-            logoutButton.isEnabled = true
-        }
-    }
-    
     @objc private func didTapLogout() {
         UserDefaults.standard.set(false, forKey: "isLoggedIn")
-        changeViews()
+        setupViews()
     }
 }
 

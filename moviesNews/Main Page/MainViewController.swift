@@ -312,7 +312,6 @@ class MainViewController: UIViewController {
         } catch let error as NSError  {
             print("Could not delete, error: \(error)")
         }
-
     }
 }
 

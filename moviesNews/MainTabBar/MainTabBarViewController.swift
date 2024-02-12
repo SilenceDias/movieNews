@@ -24,7 +24,7 @@ class MainTabBarViewController: UITabBarController {
         UINavigationController(rootViewController: MainViewController()),
         UINavigationController(rootViewController: FavoritesViewController()),
         WatchListiewController(),
-        SearchViewController(),
+        UINavigationController(rootViewController: SearchViewController()),
         ProfileViewController()
     ]
     
