@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "error_pic.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

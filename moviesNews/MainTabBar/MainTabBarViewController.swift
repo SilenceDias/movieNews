@@ -23,7 +23,7 @@ class MainTabBarViewController: UITabBarController {
     private var allViewControllers = [
         UINavigationController(rootViewController: MainViewController()),
         UINavigationController(rootViewController: FavoritesViewController()),
-        WatchListiewController(),
+        UINavigationController(rootViewController: WatchListiewController()),
         UINavigationController(rootViewController: SearchViewController()),
         ProfileViewController()
     ]

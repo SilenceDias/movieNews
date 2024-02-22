@@ -12,9 +12,10 @@ class ProfileViewController: BaseViewController {
     private var loginText: String?
     private var passwordText: String?
     private var networkManager = NetworkManager.shared
-    let alertT = UIAlertController(title: "Error", message: "Probabbly your credentials are wrong!", preferredStyle: .alert)
+    let alertWrongCredentials = UIAlertController(title: "Error", message: "Probabbly your credentials are wrong!", preferredStyle: .alert)
     let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
     }
+    let alertSessionError = UIAlertController(title: "Error", message: "Session Error!", preferredStyle: .alert)
     
     // MARK: UI Components
     private var titleLabel: UILabel = {
@@ -72,7 +73,7 @@ class ProfileViewController: BaseViewController {
         return button
     }()
     
-    private let profilePicture: UIImageView = {
+    private var profilePicture: UIImageView = {
         let view = UIImageView()
         view.layer.masksToBounds = true
         view.image = UIImage(named: "noProfile")
@@ -81,10 +82,23 @@ class ProfileViewController: BaseViewController {
         return view
     }()
     
+    private let loggedView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }()
+    
+    private let logoutView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }()
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        alertT.addAction(OKAction)
+        alertWrongCredentials.addAction(OKAction)
+        alertSessionError.addAction(OKAction)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -100,9 +114,24 @@ class ProfileViewController: BaseViewController {
         profilePicture.addGestureRecognizer(tap)
         loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         eyeButton.addTarget(self, action: #selector(didTapEye), for: .touchUpInside)
-    
-        [titleLabel, enterLabel, loginField, passwordField, loginButton].forEach {
+        
+        [loggedView, logoutView].forEach {
             view.addSubview($0)
+        }
+        
+        [titleLabel, enterLabel, loginField, passwordField, loginButton].forEach {
+            logoutView.addSubview($0)
+        }
+        
+        [logoutButton, profilePicture].forEach {
+            loggedView.addSubview($0)
+        }
+        
+        loggedView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        logoutView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
@@ -128,9 +157,6 @@ class ProfileViewController: BaseViewController {
             make.height.equalTo(50)
             make.width.equalTo(120)
         }
-        [logoutButton, profilePicture].forEach {
-            view.addSubview($0)
-        }
         profilePicture.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.height.equalTo(400)
@@ -143,24 +169,14 @@ class ProfileViewController: BaseViewController {
             make.width.equalTo(120)
         }
         logoutButton.addTarget(self, action: #selector(didTapLogout), for: .touchUpInside)
-        var isLogged = UserDefaults.standard.bool(forKey: "isLoggedIn")
+        let isLogged = UserDefaults.standard.bool(forKey: "isLoggedIn")
         if !isLogged{
-            profilePicture.isHidden = true
-            logoutButton.isHidden = true
-            logoutButton.isEnabled = false
-            enterLabel.isHidden = false
-            loginField.isHidden = false
-            passwordField.isHidden = false
-            loginButton.isHidden = false
+            loggedView.isHidden = true
+            logoutView.isHidden = false
         }
         else {
-            enterLabel.isHidden = true
-            loginField.isHidden = true
-            passwordField.isHidden = true
-            loginButton.isHidden = true
-            profilePicture.isHidden = false
-            logoutButton.isHidden = false
-            logoutButton.isEnabled = true
+            loggedView.isHidden = false
+            logoutView.isHidden = true
         }
     }
     
@@ -190,7 +206,7 @@ class ProfileViewController: BaseViewController {
                     }
                 }
             case .failure:
-                self?.tabBarController?.present(self!.alertT, animated: true)
+                self?.tabBarController?.present(self?.alertWrongCredentials ?? UIAlertController(), animated: true)
                 self?.hideLoader()
                 break
             }
@@ -206,7 +222,7 @@ class ProfileViewController: BaseViewController {
                     self?.createSession(with: requestData)
                 }
             case .failure:
-                self?.tabBarController?.present(self!.alertT, animated: true)
+                self?.tabBarController?.present(self?.alertWrongCredentials ?? UIAlertController(), animated: true)
                 self?.hideLoader()
                 break
             }
@@ -218,10 +234,14 @@ class ProfileViewController: BaseViewController {
             switch result {
             case .success(let sessionId):
                 print("My sessionId is \(sessionId)")
+                if sessionId.isEmpty {
+                    self?.tabBarController?.present(self?.alertSessionError ?? UIAlertController(), animated: true)
+                    break
+                }
                 UserDefaults.standard.set(true, forKey: "isLoggedIn")
                 self?.setupViews()
             case .failure:
-                self?.tabBarController?.present(self!.alertT, animated: true)
+                self?.tabBarController?.present(self?.alertWrongCredentials ?? UIAlertController(), animated: true)
                 break
             }
             self?.hideLoader()

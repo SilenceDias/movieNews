@@ -39,6 +39,13 @@ class FavoritesViewController: UIViewController {
         return view
     }()
     
+    private var emptyStateView: EmptyStateView = {
+        let view = EmptyStateView()
+        view.isHidden = true
+        view.configure(image: "no_favorites_pic", with: "No Favourites", and: "You haven’t liked any items yet.")
+        return view
+    }()
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +55,12 @@ class FavoritesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadMovies()
+        if favoriteMovies.isEmpty {
+            self.handleEmptyStateView(show: true)
+        }
+        else {
+            self.handleEmptyStateView(show: false)
+        }
     }
     
     // MARK: Methods
@@ -56,7 +69,7 @@ class FavoritesViewController: UIViewController {
         view.backgroundColor = .white
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         self.navigationController?.navigationBar.tintColor = .black
-        [titleLabel, movieTableView].forEach {
+        [titleLabel, movieTableView, emptyStateView].forEach {
             view.addSubview($0)
         }
         titleLabel.snp.makeConstraints { make in
@@ -65,7 +78,11 @@ class FavoritesViewController: UIViewController {
         }
         movieTableView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(8)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        emptyStateView.snp.makeConstraints { make in
+            make.edges.equalTo(movieTableView)
         }
     }
     
@@ -78,6 +95,10 @@ class FavoritesViewController: UIViewController {
         } catch let error as NSError  {
             print("Could not ferch data, error: \(error)")
         }
+    }
+    
+    private func handleEmptyStateView(show: Bool){
+        emptyStateView.isHidden = !show
     }
 }
 
@@ -105,6 +126,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
         let movie = favoriteMovies[indexPath.row]
         let id = movie.value(forKeyPath: "id") as? Int
         movieDetailsController.movidId = id ?? 0
+        movieDetailsController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(movieDetailsController, animated: true)
     }
 }

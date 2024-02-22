@@ -13,6 +13,18 @@ class SearchViewController: BaseViewController {
     private var networkManager = NetworkManager.shared
     private var favoriteMovies: [NSManagedObject] = []
     
+    private lazy var movie:[Result] = [] {
+        didSet{
+            self.movieTableView.reloadData()
+        }
+    }
+    
+    private lazy var watchMovies:[NSManagedObject] = [] {
+        didSet{
+            self.movieTableView.reloadData()
+        }
+    }
+    
     //MARK: UI components
     private var titleLabel: UILabel = {
         let view = UILabel()
@@ -40,23 +52,35 @@ class SearchViewController: BaseViewController {
         return view
     }()
     
-    private lazy var movie:[Result] = [] {
-        didSet{
-            self.movieTableView.reloadData()
-        }
-    }
+    private var emptyStateView: EmptyStateView = {
+        let view = EmptyStateView()
+        view.isHidden = true
+        view.configure(image: "not_found_pic", with: "Not found", and: "")
+        return view
+    }()
+    
+    private var recommendationsLabel: UILabel = {
+        let view = UILabel()
+        view.font = UIFont.systemFont(ofSize: 21, weight: .bold)
+        view.textAlignment = .left
+        view.textColor = .black
+        view.text = "Recomended For You"
+        return view
+    }()
     
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         loadFavorites()
+        loadWatchListMovies()
+        handleRecommendations()
     }
     
     //MARK: Methods
     private func setupViews(){
         view.backgroundColor = .white
-        [titleLabel, searchBar, movieTableView].forEach {
+        [titleLabel, searchBar, movieTableView, emptyStateView, recommendationsLabel].forEach {
             view.addSubview($0)
         }
         titleLabel.snp.makeConstraints { make in
@@ -68,18 +92,62 @@ class SearchViewController: BaseViewController {
             make.left.right.equalToSuperview().inset(16)
         }
         movieTableView.snp.makeConstraints { make in
-            make.trailing.leading.bottom.equalToSuperview()
-            make.top.equalTo(searchBar.snp.bottom).offset(16)
+            make.trailing.leading.equalToSuperview()
+            make.top.equalTo(recommendationsLabel.snp.bottom).offset(8)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        emptyStateView.snp.makeConstraints { make in
+            make.edges.equalTo(movieTableView)
+        }
+        recommendationsLabel.snp.makeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom).offset(8)
+            make.left.right.equalToSuperview().inset(16)
+        }
+    }
+    
+    private func handleRecommendations(){
+        if favoriteMovies.isEmpty && watchMovies.isEmpty {
+            let id = UserDefaults.standard.integer(forKey: "RecommendedMovieId")
+            loadRecommendations(id: id)
+        }
+        else if !favoriteMovies.isEmpty {
+            let id = favoriteMovies.first?.value(forKey: "id") as? Int
+            loadRecommendations(id: id ?? 0)
+        }
+        else {
+            let id = watchMovies.first?.value(forKey: "id") as? Int
+            loadRecommendations(id: id ?? 0)
         }
     }
     
     private func loadMovieList(query: String){
-        networkManager.loadMoviesSearch(query: query) { [weak self] movies in
+        networkManager.loadMoviesSearch(query: query) { [weak self] result in
+            self?.showLoader()
+            switch result {
+            case .success(let movies):
+                self?.movie = movies
+                self?.handleEmptyStateView(show: false)
+            case .failure:
+                self?.movie = []
+                self?.handleEmptyStateView(show: true)
+            }
+            self?.hideLoader()
+        }
+    }
+    
+    private func handleEmptyStateView(show: Bool){
+        emptyStateView.isHidden = !show
+    }
+    
+    private func loadRecommendations(id: Int){
+        networkManager.loadRecommendations(id: id) { [weak self] movies in
             self?.showLoader()
             self?.movie = movies
             self?.hideLoader()
         }
     }
+    
+    //MARK: - Core Data Methods
     
     private func loadFavorites(){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
@@ -87,6 +155,17 @@ class SearchViewController: BaseViewController {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavoriteMovies")
         do {
             favoriteMovies = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError  {
+            print("Could not ferch data, error: \(error)")
+        }
+    }
+    
+    private func loadWatchListMovies(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "WatchListMovies")
+        do {
+            watchMovies = try managedContext.fetch(fetchRequest)
         } catch let error as NSError  {
             print("Could not ferch data, error: \(error)")
         }
@@ -133,13 +212,22 @@ class SearchViewController: BaseViewController {
     }
 }
 
+//MARK: - UISearchBarDelegate
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
         loadMovieList(query: searchText)
+        if searchText.isEmpty {
+            handleRecommendations()
+            handleEmptyStateView(show: false)
+            recommendationsLabel.isHidden = false
+        }
+        else {
+            recommendationsLabel.isHidden = true
+        }
     }
 }
 
+//MARK: - UITableViewDelegate, UITableViewDataSource
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         movie.count
@@ -171,8 +259,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let movieDetailsController = MovieDetailsViewController()
         let movie = movie[indexPath.row]
         movieDetailsController.movidId = movie.id
+        movieDetailsController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(movieDetailsController, animated: true)
     }
-    
-    
 }

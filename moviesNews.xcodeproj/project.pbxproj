@@ -48,6 +48,7 @@
 		E854A96D2B26DE4000587E48 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854A96C2B26DE4000587E48 /* MovieTableViewCell.swift */; };
 		E854A9712B26E6D300587E48 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854A9702B26E6D300587E48 /* Movie.swift */; };
 		E854A97D2B32F18900587E48 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E854A97C2B32F18900587E48 /* MovieDetailsViewController.swift */; };
+		E89BD8732B7E4FA000424671 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BD8722B7E4FA000424671 /* EmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		E854A96C2B26DE4000587E48 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		E854A9702B26E6D300587E48 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		E854A97C2B32F18900587E48 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
+		E89BD8722B7E4FA000424671 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 		E8305A682B62AD41003A11F2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				E836D3AB2B376DF700FBAD40 /* CustomViews */,
 				E8305A692B62AD48003A11F2 /* Extensions */,
 			);
 			path = Source;
@@ -250,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				E836D3AC2B376E6A00FBAD40 /* CustomOverview.swift */,
+				E89BD8722B7E4FA000424671 /* EmptyStateView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -304,7 +308,6 @@
 				E8305A222B5033B5003A11F2 /* Common */,
 				E836D3C32B38EC4300FBAD40 /* Gallery */,
 				E836D3B82B38B70100FBAD40 /* Actor Details */,
-				E836D3AB2B376DF700FBAD40 /* CustomViews */,
 				E836D39D2B33285B00FBAD40 /* Movie Details */,
 				E836D39C2B3326FA00FBAD40 /* Main Page */,
 				E836D39B2B33266300FBAD40 /* Network Manger */,
@@ -491,6 +494,7 @@
 				E8305A242B5033D5003A11F2 /* BaseViewController.swift in Sources */,
 				E8305A5D2B56F65F003A11F2 /* FavoritesViewController.swift in Sources */,
 				E854A9542B26DD6400587E48 /* AppDelegate.swift in Sources */,
+				E89BD8732B7E4FA000424671 /* EmptyStateView.swift in Sources */,
 				E8305A652B62A1F2003A11F2 /* RequestTokenModel.swift in Sources */,
 				E836D3AD2B376E6A00FBAD40 /* CustomOverview.swift in Sources */,
 				E836D3AA2B3736EC00FBAD40 /* Themes.swift in Sources */,
