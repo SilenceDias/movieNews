@@ -988,6 +988,38 @@
             endingLineNumber = "209"
             landmarkName = "deleteFavoriteMoview(with:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B7520EBE-9CC0-499E-9AA0-36949E7D814B - 51895a7e0cfb335f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "moviesNews.SearchViewController.deleteFavoriteMoview(with: moviesNews.Result) -&gt; ()"
+                  moduleName = "moviesNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Search/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "210"
+                  endingLineNumber = "210"
+                  offsetFromSymbolStart = "3258">
+               </Location>
+               <Location
+                  uuid = "B7520EBE-9CC0-499E-9AA0-36949E7D814B - 51895a7e0cfb335f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "moviesNews.SearchViewController.deleteFavoriteMoview(with: moviesNews.Result) -&gt; ()"
+                  moduleName = "moviesNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Search/SearchViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "210"
+                  endingLineNumber = "210"
+                  offsetFromSymbolStart = "3538">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1099,6 +1131,21 @@
                   endingLineNumber = "461"
                   offsetFromSymbolStart = "89">
                </Location>
+               <Location
+                  uuid = "DB463F61-FFC2-4B74-B1C0-F8232F25CDB3 - 3c78fce63792db0e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadRecommendations(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "moviesNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "461"
+                  endingLineNumber = "461"
+                  offsetFromSymbolStart = "52">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1146,6 +1193,278 @@
                   startingLineNumber = "444"
                   endingLineNumber = "444"
                   offsetFromSymbolStart = "353">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E65BD82-0C01-4FDA-AC3D-53675F206AD3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "moviesNews/Search/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "handleRecommendations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "66082009-AADC-4AD0-8263-BC14B4920776"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "moviesNews/Search/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "handleRecommendations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B35CF73-1190-4705-BA2E-243E07FE051E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "moviesNews/Search/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "handleRecommendations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5431CE9-E252-4E2D-98E8-D65E37083028"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "moviesNews/Search/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "handleRecommendations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F430C67D-9FF2-411B-A131-766D7DD3439C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "moviesNews/Search/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "handleRecommendations()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D160FB49-ABB4-43E9-B523-3BF3F0E62A92"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "moviesNews/Main Page/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
+            landmarkName = "handleRecommendations()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D160FB49-ABB4-43E9-B523-3BF3F0E62A92 - 771e19c8a116e52b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
+                  moduleName = "moviesNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "335"
+                  endingLineNumber = "335"
+                  offsetFromSymbolStart = "201">
+               </Location>
+               <Location
+                  uuid = "D160FB49-ABB4-43E9-B523-3BF3F0E62A92 - 771e19c8a116e52b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
+                  moduleName = "moviesNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "335"
+                  endingLineNumber = "335"
+                  offsetFromSymbolStart = "66">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB33B934-710F-4990-9879-F3708799CAFA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "moviesNews/Main Page/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "339"
+            endingLineNumber = "339"
+            landmarkName = "handleRecommendations()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FB33B934-710F-4990-9879-F3708799CAFA - 771e19c8a116e632"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
+                  moduleName = "moviesNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "342"
+                  endingLineNumber = "342"
+                  offsetFromSymbolStart = "732">
+               </Location>
+               <Location
+                  uuid = "FB33B934-710F-4990-9879-F3708799CAFA - 771e19c8a116e674"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
+                  moduleName = "moviesNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "340"
+                  endingLineNumber = "340"
+                  offsetFromSymbolStart = "1163">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "973B7C3E-9374-4F0E-9EAC-BEDF6C18AB81"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "moviesNews/Main Page/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "336"
+            endingLineNumber = "336"
+            landmarkName = "handleRecommendations()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "973B7C3E-9374-4F0E-9EAC-BEDF6C18AB81 - 771e19c8a116e6c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
+                  moduleName = "moviesNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "336"
+                  endingLineNumber = "336"
+                  offsetFromSymbolStart = "722">
+               </Location>
+               <Location
+                  uuid = "973B7C3E-9374-4F0E-9EAC-BEDF6C18AB81 - 771e19c8a116e6c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
+                  moduleName = "moviesNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "336"
+                  endingLineNumber = "336"
+                  offsetFromSymbolStart = "201">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "006756C6-E8DD-40A3-ADF0-7ACE5B76EC80"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "moviesNews/Main Page/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
+            landmarkName = "handleRecommendations()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "006756C6-E8DD-40A3-ADF0-7ACE5B76EC80 - 771e19c8a116e6b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
+                  moduleName = "moviesNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "338"
+                  endingLineNumber = "338"
+                  offsetFromSymbolStart = "1027">
+               </Location>
+               <Location
+                  uuid = "006756C6-E8DD-40A3-ADF0-7ACE5B76EC80 - 771e19c8a116e6e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
+                  moduleName = "moviesNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "337"
+                  endingLineNumber = "337"
+                  offsetFromSymbolStart = "722">
                </Location>
             </Locations>
          </BreakpointContent>

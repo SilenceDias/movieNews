@@ -488,6 +488,12 @@ class MovieDetailsViewController: BaseViewController {
     }
     @objc private func deleteListTapped(){
         deleteFavoriteMoview()
+        if let vcs = self.navigationController?.viewControllers {
+            let previousVC = vcs[vcs.count - 2]
+            if previousVC is WatchListiewController {
+                navigationController?.popViewController(animated: true)
+            }
+        }
         changeButtons()
     }
     

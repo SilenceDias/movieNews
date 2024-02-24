@@ -135,7 +135,7 @@ class MainViewController: UIViewController {
         loadMovieList(filter: .nowPlaying, genreId: tappedGenreId)
         loadGenres()
         loadFavorites()
-        handleRecommendations()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -254,6 +254,7 @@ class MainViewController: UIViewController {
                 else {
                     self?.movie = movies
                 }
+                self?.handleRecommendations()
                 self?.handleEmptyStateView(show: false)
             case .failure:
                 self?.handleEmptyStateView(show: true)
