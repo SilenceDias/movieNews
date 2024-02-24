@@ -85,14 +85,17 @@ class GalleryViewController: UIViewController {
 
 // MARK: CollectionViewDelegate, DataSource
 extension GalleryViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = galleryCollection.dequeueReusableCell(withReuseIdentifier: "GalleryCollectionViewCell", for: indexPath) as! GalleryCollectionViewCell
         cell.configure(imagePath: photos[indexPath.row].filePath)
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
         let height = collectionView.frame.height
@@ -101,6 +104,7 @@ extension GalleryViewController: UICollectionViewDelegateFlowLayout, UICollectio
 }
 // MARK: UIScrollViewDelegate
 extension GalleryViewController: UIScrollViewDelegate {
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if let collectionView = scrollView as? UICollectionView {
             let visibleIndexPaths = collectionView.indexPathsForVisibleItems
@@ -109,4 +113,5 @@ extension GalleryViewController: UIScrollViewDelegate {
             }
         }
     }
+    
 }

@@ -201,6 +201,7 @@ class MovieDetailsViewController: BaseViewController {
         button.addTarget(self, action: #selector(watchListTapped), for: .touchUpInside)
         return button
     }()
+    
     private var deleteFromWatchListButton: UIButton = {
         let button = UIButton()
         button.setTitle("Delete", for: .normal)
@@ -486,6 +487,7 @@ class MovieDetailsViewController: BaseViewController {
         saveWatchListMovie()
         changeButtons()
     }
+    
     @objc private func deleteListTapped(){
         deleteFavoriteMoview()
         if let vcs = self.navigationController?.viewControllers {
