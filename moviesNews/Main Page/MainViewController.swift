@@ -122,6 +122,12 @@ class MainViewController: UIViewController {
         return stack
     }()
     
+    private var emptyStateView: EmptyStateView = {
+        let view = EmptyStateView()
+        view.isHidden = true
+        return view
+    }()
+    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,6 +135,7 @@ class MainViewController: UIViewController {
         loadMovieList(filter: .nowPlaying, genreId: tappedGenreId)
         loadGenres()
         loadFavorites()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -172,11 +179,6 @@ class MainViewController: UIViewController {
         })
     }
     
-    private func invokeAnimatedTitleLabel(){
-        titleLabelYPosition.update(offset: -(view.safeAreaLayoutGuide.layoutFrame.height / 2 - 20))
-        view.layoutSubviews()
-    }
-    
     private func setupViews() {
         view.backgroundColor = .white
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
@@ -187,7 +189,7 @@ class MainViewController: UIViewController {
         [titleLabel, containerView].forEach {
             view.addSubview($0)
         }
-        [movieTableView, filterCollection, genresStack].forEach {
+        [movieTableView, filterCollection, genresStack, emptyStateView].forEach {
             containerView.addSubview($0)
         }
         [showGenresButton, arrowGenresButton].forEach {
@@ -222,6 +224,7 @@ class MainViewController: UIViewController {
         movieTableView.snp.makeConstraints { make in
             make.trailing.leading.bottom.equalToSuperview()
             make.top.equalTo(genresStack.snp.bottom).offset(16)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         titleLabel.snp.makeConstraints { make in
             titleLabelYPosition = make.centerY.equalToSuperview().constraint
@@ -231,16 +234,30 @@ class MainViewController: UIViewController {
             make.top.equalTo(titleLabel.snp.bottom).offset(8)
             make.leading.trailing.bottom.equalToSuperview()
         }
+        emptyStateView.snp.makeConstraints { make in
+            make.edges.equalTo(movieTableView)
+        }
+    }
+    
+    private func handleEmptyStateView(show: Bool){
+        emptyStateView.isHidden = !show
     }
     
     private func loadMovieList(filter: Themes, genreId: Int?){
-        networkManager.loadMovieLists(filter: filter.urlPaths) { [weak self] movies in
-            self?.allMovies = movies
-            if let genreId = genreId {
-                self?.obtainMovieList(with: genreId)
-            }
-            else {
-                self?.movie = movies
+        networkManager.loadMovieLists(filter: filter.urlPaths) { [weak self] result in
+            switch result {
+            case .success(let movies):
+                self?.allMovies = movies
+                if let genreId = genreId {
+                    self?.obtainMovieList(with: genreId)
+                }
+                else {
+                    self?.movie = movies
+                }
+                self?.handleRecommendations()
+                self?.handleEmptyStateView(show: false)
+            case .failure:
+                self?.handleEmptyStateView(show: true)
             }
         }
     }
@@ -312,7 +329,18 @@ class MainViewController: UIViewController {
         } catch let error as NSError  {
             print("Could not delete, error: \(error)")
         }
-
+    }
+    
+    private func handleRecommendations(){
+        if favoriteMovies.isEmpty {
+            guard let firstMovie = movie.first else {
+                return
+            }
+            UserDefaults.standard.setValue(firstMovie.id, forKey: "RecommendedMovieId")
+        }
+        else {
+            return
+        }
     }
 }
 
@@ -348,6 +376,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let movieDetailsController = MovieDetailsViewController()
         let movie = movie[indexPath.row]
         movieDetailsController.movidId = movie.id
+        movieDetailsController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(movieDetailsController, animated: true)
     }
 }

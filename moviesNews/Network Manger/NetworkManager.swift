@@ -31,7 +31,7 @@ class NetworkManager {
         "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNTY4YjFlZDYyODljYjJlYjRjMDBjYTBlODc3NzFlZSIsInN1YiI6IjY1NzZhN2Q5YTg0YTQ3MmRlMmVlYTdlMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zzAgW4aI2oJFRgESaA1HVSv3ZKKQnEYm2I1zZwiouQs"
     ]
     
-    func loadMovieLists(filter: String, completion: @escaping([Result]) -> Void){
+    func loadMovieLists(filter: String, completion: @escaping(APIResult<[Result]>) -> Void){
         var components = urlComponents
         components.queryItems = [
             URLQueryItem(name: "api_key", value: apiKey)
@@ -49,11 +49,11 @@ class NetworkManager {
             do{
                 let movie = try JSONDecoder().decode(Movie.self, from: data)
                 DispatchQueue.main.async {
-                    completion(movie.results)
+                    completion(.success(movie.results))
                 }
             } catch {
                 DispatchQueue.main.async {
-                    completion([])
+                    completion(.failure(.unknown))
                 }
             }
         }
@@ -407,6 +407,63 @@ class NetworkManager {
                 }
             case .failure:
                 completion(.failure(.unknown))
+            }
+        }
+    }
+    
+    func loadMoviesSearch(query: String, completion: @escaping(APIResult<[Result]>) -> Void){
+        var components = urlComponents
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: apiKey),
+            URLQueryItem(name: "query", value: query)
+        ]
+        components.path = "/3/search/movie"
+        guard let requestUrl = components.url else {
+            return
+        }
+        AF.request(requestUrl, headers: headers).responseData { response in
+            guard let data = response.data else {
+                print("Error: did not get Data")
+                print(components.url!)
+                return
+            }
+            do{
+                let movie = try JSONDecoder().decode(Movie.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(movie.results))
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(.failure(.unknown))
+                }
+            }
+        }
+    }
+    
+    func loadRecommendations(id: Int, completion: @escaping([Result]) -> Void){
+        var components = urlComponents
+        components.queryItems = [
+            URLQueryItem(name: "api_key", value: apiKey),
+        ]
+        components.path = "/3/movie/\(id)/recommendations"
+        guard let requestUrl = components.url else {
+            return
+        }
+        AF.request(requestUrl, headers: headers).responseData { response in
+            guard let data = response.data else {
+                print("Error: did not get Data")
+                print(components.url!)
+                return
+            }
+            do{
+                let movie = try JSONDecoder().decode(Movie.self, from: data)
+                DispatchQueue.main.async {
+                    completion(movie.results)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([])
+                }
             }
         }
     }

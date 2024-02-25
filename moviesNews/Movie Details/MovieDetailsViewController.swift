@@ -7,12 +7,17 @@
 
 import UIKit
 import Kingfisher
+import CoreData
 class MovieDetailsViewController: BaseViewController {
     
     // MARK: Properties
     var movidId = Int()
     var voteAvg: Int = 0
+    var posterPath: String = ""
     private var networkManager = NetworkManager.shared
+    private var watchListMovies: [NSManagedObject] = []
+    var isMovieInWatchList: Bool = false
+    private lazy var isFavoriteMovie = !self.watchListMovies.filter({ ($0.value(forKeyPath: "id") as? Int) == movidId }).isEmpty
     
     private lazy var cast:[CastElement] = [] {
         didSet{
@@ -186,6 +191,28 @@ class MovieDetailsViewController: BaseViewController {
         return stack
     }()
     
+    private var addToWatchListButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Watch", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        button.backgroundColor = .blue
+        button.layer.cornerRadius = 15
+        button.addTarget(self, action: #selector(watchListTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    private var deleteFromWatchListButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Delete", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        button.backgroundColor = .systemRed
+        button.layer.cornerRadius = 15
+        button.addTarget(self, action: #selector(deleteListTapped), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var castCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -202,6 +229,7 @@ class MovieDetailsViewController: BaseViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadWatchList()
         setupViews()
         loadData()
     }
@@ -211,6 +239,7 @@ class MovieDetailsViewController: BaseViewController {
         self.navigationController?.navigationBar.titleTextAttributes = textAttributes
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         self.navigationController?.navigationBar.tintColor = .black
+        
     }
     
     // MARK: Methods
@@ -233,7 +262,7 @@ class MovieDetailsViewController: BaseViewController {
         [imdbImage, youTubeImage, facebookImage].forEach {
             socialMediasStack.addArrangedSubview($0)
         }
-        [imageView, titleLabel, allInfoStack, overviewView, castLabel, castCollection, linksLabel, socialMediasStack].forEach {
+        [imageView, titleLabel, allInfoStack, overviewView, castLabel, castCollection, linksLabel, socialMediasStack, addToWatchListButton, deleteFromWatchListButton].forEach {
             contentView.addSubview($0)
         }
         scrollView.snp.makeConstraints { make in
@@ -291,6 +320,19 @@ class MovieDetailsViewController: BaseViewController {
             make.top.equalTo(linksLabel.snp.bottom).offset(8)
             make.left.right.equalToSuperview().inset(28)
             make.height.equalTo(50)
+        }
+        addToWatchListButton.snp.makeConstraints { make in
+            make.top.equalTo(socialMediasStack.snp.bottom).offset(16)
+            make.height.equalTo(35)
+            make.width.equalTo(150)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        deleteFromWatchListButton.snp.makeConstraints { make in
+            make.top.equalTo(socialMediasStack.snp.bottom).offset(16)
+            make.height.equalTo(35)
+            make.width.equalTo(150)
+            make.centerX.equalToSuperview()
             make.bottom.equalToSuperview()
         }
         let tapGRUTube = UITapGestureRecognizer(target: self, action: #selector(self.youTubeTapped))
@@ -302,6 +344,31 @@ class MovieDetailsViewController: BaseViewController {
         let tapGRFacebook = UITapGestureRecognizer(target: self, action: #selector(self.facebookTapped))
         facebookImage.addGestureRecognizer(tapGRFacebook)
         facebookImage.isUserInteractionEnabled = true
+        if isFavoriteMovie {
+            addToWatchListButton.isHidden = true
+            addToWatchListButton.isEnabled = false
+        }
+        else {
+            deleteFromWatchListButton.isHidden = true
+            deleteFromWatchListButton.isEnabled = false
+        }
+        
+    }
+    
+    private func changeButtons(){
+        isFavoriteMovie.toggle()
+        if isFavoriteMovie {
+            addToWatchListButton.isHidden = true
+            addToWatchListButton.isEnabled = false
+            deleteFromWatchListButton.isHidden = false
+            deleteFromWatchListButton.isEnabled = true
+        }
+        else {
+            deleteFromWatchListButton.isHidden = true
+            deleteFromWatchListButton.isEnabled = false
+            addToWatchListButton.isHidden = false
+            addToWatchListButton.isEnabled = true
+        }
     }
     
     private func loadData(){
@@ -320,6 +387,7 @@ class MovieDetailsViewController: BaseViewController {
             self?.votesLabel.text = String(movieDetails.voteCount ?? 0)
             self?.overviewView.configureView(with: "Overview", and: movieDetails.overview ?? "No overview")
             let urlString = "https://image.tmdb.org/t/p/w200" + (posterPath)
+            self?.posterPath = posterPath
             let url = URL(string: urlString)!
             self!.imageView.kf.setImage(with: url)
             guard let movidId = self?.movidId else { return }
@@ -412,6 +480,73 @@ class MovieDetailsViewController: BaseViewController {
             if let url = URL(string: urlString){
                 UIApplication.shared.open(url)
             }
+        }
+    }
+    
+    @objc private func watchListTapped(){
+        saveWatchListMovie()
+        changeButtons()
+    }
+    
+    @objc private func deleteListTapped(){
+        deleteFavoriteMoview()
+        if let vcs = self.navigationController?.viewControllers {
+            let previousVC = vcs[vcs.count - 2]
+            if previousVC is WatchListiewController {
+                navigationController?.popViewController(animated: true)
+            }
+        }
+        changeButtons()
+    }
+    
+    private func saveWatchListMovie(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        guard let entity = NSEntityDescription.entity(forEntityName: "WatchListMovies", in: managedContext) else { return }
+        let favoriteMovie = NSManagedObject(entity: entity, insertInto: managedContext)
+        favoriteMovie.setValue(movidId, forKey: "id")
+        favoriteMovie.setValue(titleLabel.text, forKey: "title")
+        favoriteMovie.setValue(posterPath, forKey: "posterPath")
+        favoriteMovie.setValue(releaseLabel.text, forKey: "date")
+        favoriteMovie.setValue(voteAvg, forKey: "rating")
+        do {
+            try managedContext.save()
+        } catch let error as NSError  {
+            print("Could not save, error: \(error)")
+        }
+    }
+    
+    private func deleteFavoriteMoview(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "WatchListMovies")
+        let predicate1 = NSPredicate(format: "id == %@", "\(movidId)")
+        let predicate2 = NSPredicate(format: "title == %@", titleLabel.text!)
+        let predicate3 = NSPredicate(format: "posterPath == %@", posterPath)
+        let predicate4 = NSPredicate(format: "date == %@", releaseLabel.text!)
+        let predicate5 = NSPredicate(format: "rating == %@", "\(voteAvg)")
+        let predicateAll = NSCompoundPredicate(type: .and, subpredicates: [predicate1, predicate2, predicate3, predicate4, predicate5])
+        fetchRequest.predicate = predicateAll
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            let data = result.first
+            if let data {
+                managedContext.delete(data)
+            }
+            try managedContext.save()
+        } catch let error as NSError  {
+            print("Could not delete, error: \(error)")
+        }
+    }
+    
+    private func loadWatchList() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "WatchListMovies")
+        do {
+            watchListMovies = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError  {
+            print("Could not ferch data, error: \(error)")
         }
     }
 }
