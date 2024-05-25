@@ -35,7 +35,7 @@ MovieNews is an application for finding information about moive, its genres and 
 
     <img src="https://github.com/SilenceDias/movieNews/blob/main/images/actorDetails.png" width="250" height="500" alt="Launch Screen">
     <img src="https://github.com/SilenceDias/movieNews/blob/main/images/actorDetails2.png" width="250" height="500" alt="Main Screen">    
-    <img src="https://github.com/SilenceDias/movieNews/blob/main/images/gallery" width="250" height="500" alt="Main Screen">  
+    <img src="https://github.com/SilenceDias/movieNews/blob/main/images/gallery.png" width="250" height="500" alt="Main Screen">  
 - Watch List
   
     <img src="https://github.com/SilenceDias/movieNews/blob/main/images/watchList.png" width="250" height="500" alt="Main Screen">  
