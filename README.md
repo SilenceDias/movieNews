@@ -19,7 +19,6 @@ MovieNews is an application for finding information about moive, its genres and 
   <img src="https://github.com/SilenceDias/movieNews/blob/main/images/mainPage.png" width="250" height="500" alt="Launch Screen">
   <img src="https://github.com/SilenceDias/movieNews/blob/main/images/mainPage2.png" width="250" height="500" alt="Main Screen">
   <img src="https://github.com/SilenceDias/movieNews/blob/main/images/mainPage3.png" width="250" height="500" alt="Details Screen">
-  <img src="https://github.com/SilenceDias/movieNews/blob/main/images/mainPage4.png" width="250" height="500" alt="Details Screen">
   
 - Movie Details
 
@@ -47,3 +46,13 @@ MovieNews is an application for finding information about moive, its genres and 
 - Login Page
 
     <img src="https://github.com/SilenceDias/movieNews/blob/main/images/loginPage.png" width="250" height="500" alt="Main Screen">  
+    
+ ## Technologies Used:
+- MVC Architecture
+- [Core Data](https://developer.apple.com/documentation/coredata/)
+- [SnapKit](https://github.com/SnapKit/SnapKit)
+- [UserDefaults](https://github.com/Juanpe/SkeletonView)
+- [Lottie](https://github.com/airbnb/lottie-ios)
+- [SwiftKeychainWrapper](https://github.com/jrendel/SwiftKeychainWrapper)
+- [Kingfisher](https://github.com/onevcat/Kingfisher)
+- [Alamofire](https://github.com/Alamofire/Alamofire)
