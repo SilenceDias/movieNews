@@ -18,53 +18,6 @@
             endingLineNumber = "158"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CC7DE0C7-E12A-411D-9D2D-93C2B0C94B38 - d8462d50641abae0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.ActorDetailsViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Actor%20Details/ActorDetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "26">
-               </Location>
-               <Location
-                  uuid = "CC7DE0C7-E12A-411D-9D2D-93C2B0C94B38 - d8462d50641aa281"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.ActorDetailsViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Actor%20Details/ActorDetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "139"
-                  endingLineNumber = "139"
-                  offsetFromSymbolStart = "26">
-               </Location>
-               <Location
-                  uuid = "CC7DE0C7-E12A-411D-9D2D-93C2B0C94B38 - d8462d50641aa41d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.ActorDetailsViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Actor%20Details/ActorDetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "159"
-                  endingLineNumber = "159"
-                  offsetFromSymbolStart = "26">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -81,38 +34,6 @@
             endingLineNumber = "238"
             landmarkName = "loadPhotosOfActor(id:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "44D90EFE-D563-4AD3-9681-5373E6AAA882 - 62ad3fb4042583a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "239"
-                  endingLineNumber = "239"
-                  offsetFromSymbolStart = "581">
-               </Location>
-               <Location
-                  uuid = "44D90EFE-D563-4AD3-9681-5373E6AAA882 - 47503a590bb97d73"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "239"
-                  endingLineNumber = "239"
-                  offsetFromSymbolStart = "639">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -129,53 +50,6 @@
             endingLineNumber = "240"
             landmarkName = "loadPhotosOfActor(id:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4279AD50-0200-4064-8393-0FE8B28102B2 - 62ad3fb40425819"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "240"
-                  endingLineNumber = "240"
-                  offsetFromSymbolStart = "896">
-               </Location>
-               <Location
-                  uuid = "4279AD50-0200-4064-8393-0FE8B28102B2 - 47503a590bb97d50"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "240"
-                  endingLineNumber = "240"
-                  offsetFromSymbolStart = "778">
-               </Location>
-               <Location
-                  uuid = "4279AD50-0200-4064-8393-0FE8B28102B2 - d755622b13218076"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "241"
-                  endingLineNumber = "241"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -192,38 +66,6 @@
             endingLineNumber = "239"
             landmarkName = "loadPhotosOfActor(id:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CB37A898-50A9-4188-BBEE-6DC9481C3A06 - 62ad3fb4042583a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "239"
-                  endingLineNumber = "239"
-                  offsetFromSymbolStart = "581">
-               </Location>
-               <Location
-                  uuid = "CB37A898-50A9-4188-BBEE-6DC9481C3A06 - 47503a590bb97d73"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "239"
-                  endingLineNumber = "239"
-                  offsetFromSymbolStart = "639">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -240,38 +82,6 @@
             endingLineNumber = "241"
             landmarkName = "loadPhotosOfActor(id:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D6BAD872-C0C7-4299-868B-B31F11C43FAC - 62ad3fb404258f8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "241"
-                  endingLineNumber = "241"
-                  offsetFromSymbolStart = "1711">
-               </Location>
-               <Location
-                  uuid = "D6BAD872-C0C7-4299-868B-B31F11C43FAC - d755622b13218076"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "241"
-                  endingLineNumber = "241"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -288,53 +98,6 @@
             endingLineNumber = "243"
             landmarkName = "loadPhotosOfActor(id:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "246468B9-B883-489E-BCD0-A14EE13574DB - 62ad3fb404258be"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "243"
-                  endingLineNumber = "243"
-                  offsetFromSymbolStart = "1039">
-               </Location>
-               <Location
-                  uuid = "246468B9-B883-489E-BCD0-A14EE13574DB - 47503a590bb97dd4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "244"
-                  endingLineNumber = "244"
-                  offsetFromSymbolStart = "229">
-               </Location>
-               <Location
-                  uuid = "246468B9-B883-489E-BCD0-A14EE13574DB - 47503a590bb97df7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "243"
-                  endingLineNumber = "243"
-                  offsetFromSymbolStart = "1088">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -351,53 +114,6 @@
             endingLineNumber = "244"
             landmarkName = "loadPhotosOfActor(id:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "41283BE9-5D9F-4441-A9A8-15E8BF133DA5 - 47503a590bb97dd4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "244"
-                  endingLineNumber = "244"
-                  offsetFromSymbolStart = "229">
-               </Location>
-               <Location
-                  uuid = "41283BE9-5D9F-4441-A9A8-15E8BF133DA5 - 47503a590bb97dd4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "244"
-                  endingLineNumber = "244"
-                  offsetFromSymbolStart = "1288">
-               </Location>
-               <Location
-                  uuid = "41283BE9-5D9F-4441-A9A8-15E8BF133DA5 - 98d7837aebe925ed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "245"
-                  endingLineNumber = "245"
-                  offsetFromSymbolStart = "41">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -414,38 +130,6 @@
             endingLineNumber = "245"
             landmarkName = "loadPhotosOfActor(id:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "528B246C-E028-40F3-9892-263B24E0E299 - 47503a590bb97235"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "245"
-                  endingLineNumber = "245"
-                  offsetFromSymbolStart = "391">
-               </Location>
-               <Location
-                  uuid = "528B246C-E028-40F3-9892-263B24E0E299 - 98d7837aebe925ed"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadPhotosOfActor(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Profile&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "245"
-                  endingLineNumber = "245"
-                  offsetFromSymbolStart = "41">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -590,53 +274,6 @@
             endingLineNumber = "424"
             landmarkName = "loadMoviesSearch(query:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2B5F8B4C-B29E-4606-BD64-C437BAD3E5F8 - c52994ed775e8e3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadMoviesSearch(query: Swift.String, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "423"
-                  endingLineNumber = "423"
-                  offsetFromSymbolStart = "391">
-               </Location>
-               <Location
-                  uuid = "2B5F8B4C-B29E-4606-BD64-C437BAD3E5F8 - 2084644ff63a6bdf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.NetworkManager.loadMoviesSearch(query: Swift.String, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "423"
-                  endingLineNumber = "423"
-                  offsetFromSymbolStart = "1011">
-               </Location>
-               <Location
-                  uuid = "2B5F8B4C-B29E-4606-BD64-C437BAD3E5F8 - c52994ed775ebca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadMoviesSearch(query: Swift.String, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "414"
-                  endingLineNumber = "414"
-                  offsetFromSymbolStart = "353">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -653,38 +290,6 @@
             endingLineNumber = "426"
             landmarkName = "loadMoviesSearch(query:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "256A6CEC-1F72-458D-A72F-4058647BEAD8 - c52994ed775e921"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadMoviesSearch(query: Swift.String, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "425"
-                  endingLineNumber = "425"
-                  offsetFromSymbolStart = "873">
-               </Location>
-               <Location
-                  uuid = "256A6CEC-1F72-458D-A72F-4058647BEAD8 - c52994ed775e921"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadMoviesSearch(query: Swift.String, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "425"
-                  endingLineNumber = "425"
-                  offsetFromSymbolStart = "560">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -701,38 +306,6 @@
             endingLineNumber = "427"
             landmarkName = "loadMoviesSearch(query:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "441A8DB1-FA8F-4DF4-9986-76A7F70E0C6D - c52994ed775e946"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadMoviesSearch(query: Swift.String, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "426"
-                  endingLineNumber = "426"
-                  offsetFromSymbolStart = "2090">
-               </Location>
-               <Location
-                  uuid = "441A8DB1-FA8F-4DF4-9986-76A7F70E0C6D - c52994ed775e946"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadMoviesSearch(query: Swift.String, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "426"
-                  endingLineNumber = "426"
-                  offsetFromSymbolStart = "873">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -749,38 +322,6 @@
             endingLineNumber = "431"
             landmarkName = "loadMoviesSearch(query:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "921C9D09-634A-4E43-A26B-E02769FD2A3F - c52994ed775e9fa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadMoviesSearch(query: Swift.String, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "430"
-                  endingLineNumber = "430"
-                  offsetFromSymbolStart = "1238">
-               </Location>
-               <Location
-                  uuid = "921C9D09-634A-4E43-A26B-E02769FD2A3F - c52994ed775e9fa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadMoviesSearch(query: Swift.String, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "430"
-                  endingLineNumber = "430"
-                  offsetFromSymbolStart = "1057">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -797,53 +338,6 @@
             endingLineNumber = "432"
             landmarkName = "loadMoviesSearch(query:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F0641A1A-C85C-482F-966C-C7DD492FFC1A - f051215769824851"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadMoviesSearch(query: Swift.String, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "432"
-                  endingLineNumber = "432"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  uuid = "F0641A1A-C85C-482F-966C-C7DD492FFC1A - c52994ed775f638"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadMoviesSearch(query: Swift.String, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "432"
-                  endingLineNumber = "432"
-                  offsetFromSymbolStart = "1408">
-               </Location>
-               <Location
-                  uuid = "F0641A1A-C85C-482F-966C-C7DD492FFC1A - f051215769824830"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadMoviesSearch(query: Swift.String, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "433"
-                  endingLineNumber = "433"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -860,38 +354,6 @@
             endingLineNumber = "423"
             landmarkName = "loadMoviesSearch(query:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E866A07B-CFFE-4026-9E05-1C7E5F3C8F30 - 2084644ff63a6bdf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.NetworkManager.loadMoviesSearch(query: Swift.String, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "423"
-                  endingLineNumber = "423"
-                  offsetFromSymbolStart = "1011">
-               </Location>
-               <Location
-                  uuid = "E866A07B-CFFE-4026-9E05-1C7E5F3C8F30 - c52994ed775ebca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadMoviesSearch(query: Swift.String, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "414"
-                  endingLineNumber = "414"
-                  offsetFromSymbolStart = "353">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -988,38 +450,6 @@
             endingLineNumber = "213"
             landmarkName = "deleteFavoriteMoview(with:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B7520EBE-9CC0-499E-9AA0-36949E7D814B - 51895a7e0cfb335f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.SearchViewController.deleteFavoriteMoview(with: moviesNews.Result) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Search/SearchViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "210"
-                  endingLineNumber = "210"
-                  offsetFromSymbolStart = "3258">
-               </Location>
-               <Location
-                  uuid = "B7520EBE-9CC0-499E-9AA0-36949E7D814B - 51895a7e0cfb335f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.SearchViewController.deleteFavoriteMoview(with: moviesNews.Result) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Search/SearchViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "210"
-                  endingLineNumber = "210"
-                  offsetFromSymbolStart = "3538">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1100,53 +530,6 @@
             endingLineNumber = "460"
             landmarkName = "loadRecommendations(id:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DB463F61-FFC2-4B74-B1C0-F8232F25CDB3 - 19873811f2e3396"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadRecommendations(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "460"
-                  endingLineNumber = "460"
-                  offsetFromSymbolStart = "1196">
-               </Location>
-               <Location
-                  uuid = "DB463F61-FFC2-4B74-B1C0-F8232F25CDB3 - 3c78fce63792db0e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadRecommendations(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "461"
-                  endingLineNumber = "461"
-                  offsetFromSymbolStart = "89">
-               </Location>
-               <Location
-                  uuid = "DB463F61-FFC2-4B74-B1C0-F8232F25CDB3 - 3c78fce63792db0e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadRecommendations(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "461"
-                  endingLineNumber = "461"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1163,38 +546,6 @@
             endingLineNumber = "452"
             landmarkName = "loadRecommendations(id:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C10B3A51-B7AC-4DD3-8D17-B1C63C6400A8 - d1cd317a58d602d8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.NetworkManager.loadRecommendations(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "452"
-                  endingLineNumber = "452"
-                  offsetFromSymbolStart = "1055">
-               </Location>
-               <Location
-                  uuid = "C10B3A51-B7AC-4DD3-8D17-B1C63C6400A8 - 19873811f2e3186"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in moviesNews.NetworkManager.loadRecommendations(id: Swift.Int, completion: (Swift.Array&lt;moviesNews.Result&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Network%20Manger/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "444"
-                  endingLineNumber = "444"
-                  offsetFromSymbolStart = "353">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1291,38 +642,6 @@
             endingLineNumber = "335"
             landmarkName = "handleRecommendations()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D160FB49-ABB4-43E9-B523-3BF3F0E62A92 - 771e19c8a116e52b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "335"
-                  endingLineNumber = "335"
-                  offsetFromSymbolStart = "201">
-               </Location>
-               <Location
-                  uuid = "D160FB49-ABB4-43E9-B523-3BF3F0E62A92 - 771e19c8a116e52b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "335"
-                  endingLineNumber = "335"
-                  offsetFromSymbolStart = "66">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1339,38 +658,6 @@
             endingLineNumber = "339"
             landmarkName = "handleRecommendations()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FB33B934-710F-4990-9879-F3708799CAFA - 771e19c8a116e632"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "342"
-                  endingLineNumber = "342"
-                  offsetFromSymbolStart = "732">
-               </Location>
-               <Location
-                  uuid = "FB33B934-710F-4990-9879-F3708799CAFA - 771e19c8a116e674"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "340"
-                  endingLineNumber = "340"
-                  offsetFromSymbolStart = "1163">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1387,38 +674,6 @@
             endingLineNumber = "336"
             landmarkName = "handleRecommendations()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "973B7C3E-9374-4F0E-9EAC-BEDF6C18AB81 - 771e19c8a116e6c8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "336"
-                  endingLineNumber = "336"
-                  offsetFromSymbolStart = "722">
-               </Location>
-               <Location
-                  uuid = "973B7C3E-9374-4F0E-9EAC-BEDF6C18AB81 - 771e19c8a116e6c8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "336"
-                  endingLineNumber = "336"
-                  offsetFromSymbolStart = "201">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1435,38 +690,6 @@
             endingLineNumber = "337"
             landmarkName = "handleRecommendations()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "006756C6-E8DD-40A3-ADF0-7ACE5B76EC80 - 771e19c8a116e6b6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "338"
-                  endingLineNumber = "338"
-                  offsetFromSymbolStart = "1027">
-               </Location>
-               <Location
-                  uuid = "006756C6-E8DD-40A3-ADF0-7ACE5B76EC80 - 771e19c8a116e6e9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "moviesNews.MainViewController.handleRecommendations() -&gt; ()"
-                  moduleName = "moviesNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/silence/Desktop/IOS/moviesNews/moviesNews/Main%20Page/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "337"
-                  endingLineNumber = "337"
-                  offsetFromSymbolStart = "722">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
